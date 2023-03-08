@@ -17,18 +17,18 @@ let team = [
 
     },
     {
-        nome:"Angela Lopez",
+        nome: "Angela Lopez",
         ruolo: "Social Media Manager",
         img: "angela-lopez-social-media-manager.jpg"
     },
     {
         nome: "Scott Estrada",
-        ruolo:"Developer",
+        ruolo: "Developer",
         img: "scott-estrada-developer.jpg"
     },
     {
         nome: "Barbara Ramos",
-        ruolo: "Graphic Designer", 
+        ruolo: "Graphic Designer",
         img: "barbara-ramos-graphic-designer.jpg"
     }
 ];
@@ -39,20 +39,27 @@ console.log(team)
 let containerEl = document.getElementById("container");
 let listEl = document.getElementById("list");
 
-printArray(team, listEl)
+for (let chiave in team) {
+    // creo elemento li
+    let newElementMembro = document.createElement("li");
 
-// ----------------------------------------------------
-// creo funzione che mi stampa in pagina il mio array 
-function printArray(array, genitore) {
-    for(let i = 0; i < array.length;i++) {
-        const members = array[i];
-        let newElement = document.createElement("li");
-        genitore.append(newElement);
-        for ( let chiave in members) {
-            newElement.innerText = `${chiave}: ${members[chiave]}`
-            console.log(chiave + ":" + members[chiave]);
+    // appendo membro alla lista
+    listEl.append(newElementMembro);
 
-        }
-        
-    }
+    // bersaglio key nome in arrey
+    let nomeMembro = document.createElement("div");
+    newElementMembro.append(nomeMembro)
+    nomeMembro.innerText = team[chiave].nome;
+
+    // bersaglio key ruolo
+    let ruoloMembro = document.createElement("div");
+    newElementMembro.append(ruoloMembro)
+    ruoloMembro.innerText = team[chiave].ruolo;
+
+    // lbersaglio key img
+    let imgMembro = document.createElement("div");
+    newElementMembro.append(imgMembro)
+    imgMembro.innerText = team[chiave].img;
 }
+
+
