@@ -33,3 +33,26 @@ let team = [
     }
 ];
 
+console.log(team)
+
+// bersaglio container html
+let containerEl = document.getElementById("container");
+let listEl = document.getElementById("list");
+
+printArray(team, listEl)
+
+// ----------------------------------------------------
+// creo funzione che mi stampa in pagina il mio array 
+function printArray(array, genitore) {
+    for(let i = 0; i < array.length;i++) {
+        const members = array[i];
+        let newElement = document.createElement("li");
+        genitore.append(newElement);
+        for ( let chiave in members) {
+            newElement.innerText = `${chiave}: ${members[chiave]}`
+            console.log(chiave + ":" + members[chiave]);
+
+        }
+        
+    }
+}
