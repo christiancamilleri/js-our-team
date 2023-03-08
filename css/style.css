@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    padding: 1em;
+}
+
+#container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    width: calc(100% / 3 - (1em / 3 * 2));
+}
+
+.center {
+    text-align: center;
+}

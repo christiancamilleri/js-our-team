@@ -45,21 +45,28 @@ for (let chiave in team) {
 
     // appendo membro alla lista
     listEl.append(newElementMembro);
-
+    
+    // lbersaglio key img
+    let imgMembro = document.createElement("div");
+    newElementMembro.append(imgMembro)
+    // imgMembro.innerText = team[chiave].img;
+    // inserisco immagine in html
+    imgMembro.innerHTML = '<img src="../img/'+ team[chiave].img + '"alt="">'
+    
     // bersaglio key nome in arrey
     let nomeMembro = document.createElement("div");
+    // aggiungo classe
+    nomeMembro.classList.add("center")
     newElementMembro.append(nomeMembro)
     nomeMembro.innerText = team[chiave].nome;
 
     // bersaglio key ruolo
     let ruoloMembro = document.createElement("div");
     newElementMembro.append(ruoloMembro)
+    // aggiungo classe
+    ruoloMembro.classList.add("center")
     ruoloMembro.innerText = team[chiave].ruolo;
 
-    // lbersaglio key img
-    let imgMembro = document.createElement("div");
-    newElementMembro.append(imgMembro)
-    imgMembro.innerText = team[chiave].img;
 }
 
 
